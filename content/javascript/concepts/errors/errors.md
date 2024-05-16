@@ -84,21 +84,20 @@ new Error(message, fileName, lineNumber);
 
 ### Example
 
-Instances of the `Error` object can be stored in variables or other objects. However, it may be more efficient throw the `Error` object instance directly.
+Instances of the `Error` object can be stored in variables or other objects.
 
 ```js
 const errorMessage = Error("Username not found");
 throw errorMessage;
 ```
 
-However, in some situations it may be more efficient to throw the `Error` object instance directly.
+However, in some situations, it may be more efficient to throw the `Error` object instance directly.
 
 ```js
-// Shorthand Error instance
 throw Error("Username not found");
 ```
 
-Both examples above will result in an error message prompt similiar to what is below:
+Both examples above will result in an error message prompt similar to what is below:
 
 ```shell
 Error: Username not found
@@ -123,7 +122,7 @@ try {
 }
 ```
 
-Following the error message will be the function call stack. This provides the path of function calls responsible for the error. The most recent function where the error originates from will be at the top with the file name, line number, and character number. At the bottom of the list is the starting function call that lead to the error.
+Following the error message will be the function call stack. This provides the path of function calls responsible for the error. The most recent function where the error originates from will be at the top with the file name, line number, and character number. At the bottom of the list is the starting function call that leads to the error.
 
 ### CodeByte Example
 
@@ -189,7 +188,7 @@ try {
 }
 ```
 
-When using parentheses, brackets, or quotations, the closing character must be accompanied the respective opening character. In our case, the extra closing parentheses after the `for` statement has no corresponding opening character.
+When using parentheses, brackets, or quotations, the closing character must be accompanied by the respective opening character. In our case, the extra closing parentheses after the `for` statement has no corresponding opening character.
 
 ```shell
 SyntaxError: Unexpected token ')'
@@ -204,7 +203,7 @@ let message;
 console.log(message.length);
 ```
 
-This code snippet will result in a `TypeError` because the we are trying to access the method `.length` of an `undefined` variable. Initializing or reassigning the `message` variable with a String or an Array before accessing it would resolve this issue.
+This code snippet will result in a `TypeError` because we are trying to access the method `.length` of an `undefined` variable. Initializing or reassigning the `message` variable with a String or an Array before accessing it would resolve this issue.
 
 ```shell
 TypeError: Cannot read properties of undefined (reading 'length')
@@ -212,14 +211,14 @@ TypeError: Cannot read properties of undefined (reading 'length')
 
 ## URIError
 
-A `URIError` comes from passing illegal parameters to the `encodeURI` or `decodeURI` global functions. These include character sequences which have no conversion to any Unicode characters, also known as lone surrogates, and poorly formed sequences that do not adhere to the Unicode standard formatting.
+A `URIError` comes from passing illegal parameters to the `encodeURI` or `decodeURI` global functions. These include character sequences that have no conversion to any Unicode characters, also known as lone surrogates and poorly formed sequences that do not adhere to the Unicode standard formatting.
 
 ```js
 const message = "H%C3%A911%C3%B6%20W%C3%B4R1%C3%9"; // A zero was deleted at the end of the string
 console.log(decodeURI(message));
 ```
 
-The message cannot be decoded because JavaScript does not have the information necessary to recompile the whole sequence of characters into its original form. Incomplete or fragmented sequences will result in a `URIError`. During these instances, evaluate the parameters being passed to the encoding or decoding functions for descrepencies.
+The message cannot be decoded because JavaScript does not have the information necessary to recompile the whole sequence of characters into its original form. Incomplete or fragmented sequences will result in a `URIError`. During these instances, evaluate the parameters being passed to the encoding or decoding functions for discrepancies.
 
 ## AggregateError
 
@@ -255,7 +254,7 @@ Running this code will return a message similar to the following:
 
 ## InternalError
 
-An `InternalError` indicates that the JavaScript engine has encountered a problem with a recursive function. A recursive function is one that calls itself until a base condition is met. In situations where no base condition is established or the recursive limit is set too high, an `InternalError` is likely to happen. In applications outside of Firefox, this may be interpreted as a `RangeError`.
+An `InternalError` indicates that the JavaScript engine has encountered a problem with a recursive function. A recursive function will call itself until a base condition is met. In situations where no base condition is established or the recursive limit is set too high, an `InternalError` is likely to happen. In applications outside of Firefox, this may be interpreted as a `RangeError`.
 
 > **Note:** `InternalError` is not compatible with all browsers and should not be used in public applications.
 
