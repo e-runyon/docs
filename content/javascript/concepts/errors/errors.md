@@ -1,8 +1,6 @@
 ---
 Title: 'Errors'
-Description: 'Errors are objects that can provide detailed information regarding the source of a runtime error. Each error is provided with a "name" for the type of error, and a "message" to describe the error that occurred. Javascript will throw an error when the runtime environment encounters unexpected behavior. 
-
-Throwing an error will stop the execution of the current function and return the error object. This is also known as an exception. Thrown errors are caught by the next outer "catch" block of a "try...catch...finally" statement. If no catch block exists, the program will end abruptly and display an uncaught error statement in the terminal window.'
+Description: 'Error objects hold information regarding the source of a runtime error. Thrown errors are caught by the next outer "catch" block of a "try...catch" statement. If no catch block exists the program will end.'
 Subjects:
   - 'Web Development'
   - 'Computer Science'
@@ -17,9 +15,9 @@ CatalogContent:
   - 'paths/create-a-back-end-app-with-javascript'
 ---
 
-`Error`s are objects that can provide detailed information regarding the source of a runtime error. Each error is provided with a `name` for the type of error, and a `message` to describe the error that occurred. Javascript will throw an error when the runtime environment encounters unexpected behavior. 
+`Error`s are objects that can provide detailed information regarding the source of a runtime error. Each error is assigned with a `name` for the type of error, and a `message` to describe the error that occurred. Javascript will throw an error when the runtime environment encounters unexpected behavior. 
 
-Throwing an error will stop the execution of the current function and return the error object. This is also known as an exception. Thrown errors are caught by the next outer `catch` block of a `try...catch...finally` statement. If no catch block exists, the program will end abruptly and display an uncaught error statement in the terminal window.
+A thrown error will stop the execution of the current function and return the error object. This is also known as an exception. Thrown errors are caught by the next outer `catch` block of a `try...catch` statement. If no catch block exists, the program will end abruptly and display an uncaught error statement in the terminal window.
 
 ## The Error Object
 
