@@ -23,8 +23,8 @@ A thrown error will stop the execution of the current function and return the er
 
 The error object holds information about the exception that was thrown in its two properties:
 
-- `name` Provides the type of error.
-- `message` A human-readable description of the error instance.
+- `name` Provides the type of error
+- `message` A human-readable description of the error instance
 
 The following types of error can be returned by the `name` property:
 
@@ -74,6 +74,35 @@ Error(message);
 Error(message, options);
 Error(message, fileName);
 Error(message, fileName, lineNumber);
+
+new Error();
+new Error(message);
+new Error(message, options);
+new Error(message, fileName);
+new Error(message, fileName, lineNumber);
+```
+
+### Example
+
+Instances of the `Error` object can be stored in variables or other objects. However, it may be more efficient throw the `Error` object instance directly.
+
+```js
+const errorMessage = Error("Username not found");
+throw errorMessage;
+```
+
+However, in some situations it may be more efficient to throw the `Error` object instance directly.
+
+```js
+// Shorthand Error instance
+throw Error("Username not found");
+```
+
+Both examples above will result in an error message prompt similiar to what is below:
+
+```shell
+Error: Username not found
+  at Object.<anonymous> (C:\Users\...\test.js:1:7)
 ```
 
 For more expressive exceptions, we can use a type of error in place of the generic `Error` descriptor.
@@ -92,27 +121,6 @@ try {
 } catch (error) {
     console.error(error);
 }
-```
-
-### Example
-
-Instances of the `Error` object can be stored in variables or other objects. However, it may be more efficient throw the `Error` object instance directly.
-
-```js
-const errorMessage = Error("Username not found");
-throw errorMessage;
-```
-
-```js
-// Shorthand Error instance
-throw Error("Username not found");
-```
-
-Both examples above will result in an error message prompt similiar to what is below:
-
-```shell
-Error: Username not found
-  at Object.<anonymous> (C:\Users\...\test.js:1:7)
 ```
 
 Following the error message will be the function call stack. This provides the path of function calls responsible for the error. The most recent function where the error originates from will be at the top with the file name, line number, and character number. At the bottom of the list is the starting function call that lead to the error.
